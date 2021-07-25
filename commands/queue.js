@@ -7,7 +7,7 @@ module.exports = {
     const permissions = message.channel.permissionsFor(message.client.user);
     if (!permissions.has(["ADD_REACTIONS", "MANAGE_MESSAGES"]))
       return message.channel.send(`I need add_reactions permissions`);
-
+    let queue = client.distube.getQueue(message)
     let currentPage = 0;
     const embeds = generateQueueEmbed(message, queue.songs);
     const queueEmbed = await message.channel.send(
