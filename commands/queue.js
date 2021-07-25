@@ -25,24 +25,24 @@ module.exports.run = async(client, message, args) =>  {
       embeds[currentPage]
     );
     try {
-      await queueEmbed.react(":arrow_left:");
-      await queueEmbed.react(":stop_button:");
-      await queueEmbed.react(":arrow_right:");
+      await queueEmbed.react("⬅️");
+      await queueEmbed.react("⏹️");
+      await queueEmbed.react("➡️");
     } catch (error) {
       console.error(error);
       message.channel.send(error.message).catch(console.error);
     }
     const filter = (reaction, user) =>
-      [":arrow_left:", ":stop_button:", ":arrow_right:"].includes(reaction.emoji.name) && message.author.id === user.id;
+      ["⬅️", "⏹️", "➡️"].includes(reaction.emoji.name) && message.author.id === user.id;
     const collector = queueEmbed.createReactionCollector(filter, { time: 30000 });
     collector.on("collect", async (reaction, user) => {
       try {
-        if (reaction.emoji.name === ":arrow_right:") {
+        if (reaction.emoji.name === "➡️") {
           if (currentPage < embeds.length - 1) {
             currentPage++;
             queueEmbed.edit(`Current page - **${currentPage + 1}**/**${embeds.length}**`, embeds[currentPage]);
           }
-        } else if (reaction.emoji.name === ":arrow_left:") {
+        } else if (reaction.emoji.name === "⬅️") {
           if (currentPage !== 0) {
             --currentPage;
             queueEmbed.edit(`Current page - **${currentPage + 1}**/**${embeds.length}**`, embeds[currentPage]);
