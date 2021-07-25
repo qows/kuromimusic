@@ -1,12 +1,11 @@
 
 const distube = require('distube')
 const Discord = require("discord.js")
-module.exports.config = {
+module.exports = {
   name: "queue",
   inVoiceChannel: true,
-}
-module.exports.run = async(client, message, args) =>  {
- const permissions = message.channel.permissionsFor(message.client.user);
+  run: async (client, message, args) => {
+    const permissions = message.channel.permissionsFor(message.client.user);
     if (!permissions.has(["ADD_REACTIONS", "MANAGE_MESSAGES"]))
       return message.channel.send(`I need add_reactions permissions`);
     let queue = client.distube.getQueue(message)
@@ -51,6 +50,7 @@ module.exports.run = async(client, message, args) =>  {
       }
     });
   }
+}
 function generateQueueEmbed(message, queue) {
   let embeds = [];
   let k = 10;
