@@ -1,7 +1,7 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
 const client = new Discord.Client();
-require('@weky/inlinereply');
+const weky = require('weky')
 const disbut = require('discord-buttons');
 const { Calculator } = require('weky');
 disbut(client);
