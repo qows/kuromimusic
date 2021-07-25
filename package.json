@@ -1,7 +1,7 @@
 {
     "name": "kuromi-music",
     "version": "1.0.0",
-    "description": "DisTube music bot.",
+    "description": "Kuromi music bot.",
     "main": "index.js",
     "scripts": {
       "start": "node index.js",
@@ -13,10 +13,12 @@
       "url": "git+ssh://git@github.com/qows/kuromimusic.git"
     },
     "author": "Faith",
-    "homepage": "https://github.com/skick1234/DisTube-Example#readme",
+    "homepage": "https://github.com/qows/kuromimusic#readme",
     "dependencies": {
       "@discordjs/opus": "^0.3.2",
       "discord.js": "^12.3.1",
+      "@weky/inlinereply": "^0.0.0",
+      "discord-buttons": "^4.0.0",
       "distube": "^2.5.1"
     },
     "devDependencies": {
@@ -25,5 +27,6 @@
       "eslint-plugin-import": "^2.22.1",
       "eslint-plugin-node": "^11.1.0",
       "eslint-plugin-promise": "^4.2.1"
+
     }
   }
