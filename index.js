@@ -89,4 +89,4 @@ client.distube
     .setDescription(`Added [**${playlist.title}**](${playlist.url}) (**${playlist.total_items}** songs) to the queue`)
     message.channel.send(songEmbed)
 })
-client.login("ODY1MTcxODM3NTc0NTc4MTg3.YPAIEA.DCFHUzJaCczwBe6CjZe9C-WQvHs")
+client.login(process.env["token"])
