@@ -1,9 +1,5 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
-const fs = require("fs")
-const config = require("./config.json")
-
-client.config = require("./config.json")
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true })
 client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
@@ -25,7 +21,7 @@ client.on("ready", () => {
 })
 
 client.on("message", async message => {
-    const prefix = config.prefix
+    const prefix = ">"
     if (!message.content.startsWith(prefix)) return
     const args = message.content.slice(prefix.length).trim().split(/ +/g)
     const command = args.shift().toLowerCase()
