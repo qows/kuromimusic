@@ -1,5 +1,6 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
+const client = new Discord.Client();
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true })
 client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
