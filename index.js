@@ -1,6 +1,10 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
 const client = new Discord.Client();
+require('@weky/inlinereply');
+const disbut = require('discord-buttons');
+const { Calculator } = require('weky');
+disbut(client);
 const fs = require("fs")
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true })
 client.commands = new Discord.Collection()
@@ -41,11 +45,19 @@ client.on("message", async message => {
         message.reply("error")
     }
 })
-
+client.on('message', async (message) => {
+	if(message.content === '>calc') {
+		await Calculator({
+			message: message,
+			embed: {
+				title: 'Button Calculator',
+				color: '#009BFF',
+			},
+			invalidQuery: 'The provided equation is invalid',
+		});
+	}
+});
 const status = queue => (`Volume: \`${queue.volume}%\` | Filter: \`${queue.filter || "Off"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``)
-
-
-
 
 client.distube
 
@@ -77,4 +89,4 @@ client.distube
     .setDescription(`Added [**${playlist.title}**](${playlist.url}) (**${playlist.total_items}** songs) to the queue`)
     message.channel.send(songEmbed)
 })
-client.login(process.env['token'])
+client.login("ODY1MTcxODM3NTc0NTc4MTg3.YPAIEA.DCFHUzJaCczwBe6CjZe9C-WQvHs")
