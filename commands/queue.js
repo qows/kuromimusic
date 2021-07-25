@@ -58,8 +58,9 @@ function generateQueueEmbed(message, queue) {
     k += 10;
     const info = current.map((track) => `${++j -1} [**${track.name}**](${track.url}) | \`${track.formattedDuration}\``).slice(1).join("\n");
     const embed = new Discord.MessageEmbed()
-      .setColor("#69919D")
-      .setDescription(`Current Song - [**${queue[0].name}**](${queue[0].url})**\n\n${info}`)
+      .setColor("#009BFF")
+      .setTitle("Kuromi")
+      .setDescription(`Current Song - [**${queue[0].name}**](${queue[0].url})\n${info}`)
     embeds.push(embed);
   }
   return embeds;
