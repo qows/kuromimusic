@@ -1,7 +1,7 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
+require('@weky/inlinereply');
 const client = new Discord.Client();
-const weky = require('weky')
 const disbut = require('discord-buttons');
 const { Calculator } = require('weky');
 disbut(client);
@@ -45,18 +45,6 @@ client.on("message", async message => {
         message.reply("error")
     }
 })
-client.on('message', async (message) => {
-	if(message.content === '>calc') {
-		await Calculator({
-			message: message,
-			embed: {
-				title: 'Button Calculator',
-				color: '#009BFF',
-			},
-			invalidQuery: 'The provided equation is invalid',
-		});
-	}
-});
 const status = queue => (`Volume: \`${queue.volume}%\` | Filter: \`${queue.filter || "Off"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``)
 
 client.distube
