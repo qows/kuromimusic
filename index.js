@@ -1,10 +1,6 @@
 const DisTube = require("distube")
 const Discord = require("discord.js")
-require('@weky/inlinereply');
 const client = new Discord.Client();
-const disbut = require('discord-buttons');
-const { Calculator } = require('weky');
-disbut(client);
 const fs = require("fs")
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true })
 client.commands = new Discord.Collection()
