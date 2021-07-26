@@ -1,1 +1,1 @@
-worker: npm install weky && node .
+worker: node .
