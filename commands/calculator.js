@@ -13,4 +13,4 @@ module.exports = {
             invalidQuery: 'The provided equation is invalid',
         });
     }
-});
+};
