@@ -17,7 +17,9 @@
     "dependencies": {
       "@discordjs/opus": "^0.3.2",
       "discord.js": "^12.3.1",
-      "distube": "^2.8.15"
+      "distube": "^2.5.1",
+      "spotify-uri": "^2.2.0",
+      "spotify-url-info": "^2.2.3"
     },
     "devDependencies": {
       "eslint": "^7.17.0",
