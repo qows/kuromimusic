@@ -1,8 +1,9 @@
 const DisTube = require("distube")
+const SpotifyPlugin = require("@distube/spotify")
 const Discord = require("discord.js")
 const client = new Discord.Client();
-const fs = require("fs")
-client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true })
+const fs = require("fs")    
+client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true, leaveOnFinish: true, plugins: [new SpotifyPlugin({ parallel: true })] })
 client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
 fs.readdir("./commands/", (err, files) => {
